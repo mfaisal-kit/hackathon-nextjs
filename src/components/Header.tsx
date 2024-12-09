@@ -58,6 +58,7 @@ export default function Header(){
           <li><a href="/ourchefs" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">ourchefs</a></li>
           <li><a href="/restaurant" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">restaurant</a></li>
           <li><a href="/shoplist" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">shoplist</a></li>
+          <li><a href="/shopdetail" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">shopdetail</a></li>
           <li><a href="/shoppingcart" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">shoppingcart</a></li>
           <li><a href="/signin" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">signin</a></li>
           <li><a href="/signup" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">signup</a></li>
