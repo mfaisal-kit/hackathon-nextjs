@@ -19,31 +19,106 @@ export default function Header(){
               </button>
   
               <ul
-                className='lg:flex lg:gap-x- max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50'>
-                <li className='mb-6 hidden max-lg:block'>
-                   <div className="w-[367px] h-[24px] gap-[48px] justify-between ">
-                    <a href="javascript:void(0)"><img src="https://readymadeui.com/readymadeui.svg" alt="logo" className='w-36' />
-                    </a>
-                    <button
-                      className='px-4 py-2 text-sm rounded-full text-white border-2 border-[#007bff] bg-[#007bff] hover:bg-[#004bff]'>Sign
-                      In</button>
-                  </div>
-                </li>
-                <li className='max-lg:border-b max-lg:py-3 px-3'><a href='javascript:void(0)'
-                  className='text-[#007bff] hover:text-[#007bff] text-[15px] block font-semibold'>Home</a></li>
-                <li className='max-lg:border-b max-lg:py-3 px-3'><a href='javascript:void(0)'
-                  className='text-[#333] hover:text-[#007bff] text-[15px] block font-semibold'>Menu</a></li>
-                <li className='max-lg:border-b max-lg:py-3 px-3'><a href='javascript:void(0)'
-                  className='text-[#333] hover:text-[#007bff] text-[15px] block font-semibold'>Blog</a></li>
-                <li className='max-lg:border-b max-lg:py-3 px-3'><a href='javascript:void(0)'
-                  className='text-[#333] hover:text-[#007bff] text-[15px] block font-semibold'>Pages</a></li>
-                <li className='max-lg:border-b max-lg:py-3 px-3'><a href='javascript:void(0)'
-                  className='text-[#333] hover:text-[#007bff] text-[15px] block font-semibold'>About</a></li>
-                <li className='max-lg:border-b max-lg:py-3 px-3'><a href='javascript:void(0)'
-                  className='text-[#333] hover:text-[#007bff] text-[15px] block font-semibold'>Shop</a></li>
-                <li className='max-lg:border-b max-lg:py-3 px-3'><a href='javascript:void(0)'
-                  className='text-[#333] hover:text-[#007bff] text-[15px] block font-semibold'>Contact</a></li>
-              </ul>
+  className="lg:flex lg:gap-x-4 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50"
+>
+  <li className="mb-6 hidden max-lg:block">
+    <div className="w-[367px] h-[24px] gap-[48px] justify-between">
+      <a href="javascript:void(0)">
+        <img src="https://readymadeui.com/readymadeui.svg" alt="logo" className="w-36" />
+      </a>
+      <button className="px-4 py-2 text-sm rounded-full text-white border-2 border-[#007bff] bg-[#007bff] hover:bg-[#004bff]">
+        Sign In
+      </button>
+    </div>
+  </li>
+
+  {/* Home with Dropdown */}
+  <li className="relative group max-lg:border-b max-lg:py-3 px-3">
+    <a
+      href="javascript:void(0)"
+      className="flex items-center justify-between text-[#007bff] hover:text-[#007bff] text-[15px] block font-semibold"
+    >
+      Home
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-4 h-4 ml-2"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path d="M7 10l5 5 5-5z" />
+      </svg>
+    </a>
+        <ul className="absolute hidden group-hover:flex flex-col bg-white shadow-lg rounded-md  min-w-[150px] z-10">
+          <li><a href="/404page1" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">404page</a></li>
+          <li><a href="/aboutus" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">aboutus</a></li>
+          <li><a href="/blogdetail" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">blogdetail</a></li>
+          <li><a href="/blogpage" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">blogpage</a></li>
+          <li><a href="/faqpage" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">faqpage</a></li>
+          <li><a href="/menu" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">menu</a></li>
+          <li><a href="/ourchefs" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">ourchefs</a></li>
+          <li><a href="/restaurant" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">restaurant</a></li>
+          <li><a href="/shoplist" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">shoplist</a></li>
+          <li><a href="/shoppingcart" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">shoppingcart</a></li>
+          <li><a href="/signin" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">signin</a></li>
+          <li><a href="/signup" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">signup</a></li>
+        </ul>
+  </li>
+
+  {/* Pages with Dropdown */}
+  <li className="relative group max-lg:border-b max-lg:py-3 px-3">
+    <a
+      href="javascript:void(0)"
+      className="flex items-center justify-between text-[#333] hover:text-[#007bff] text-[15px] block font-semibold"
+    >
+      Pages
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-4 h-4 ml-2"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path d="M7 10l5 5 5-5z" />
+      </svg>
+    </a>
+    <ul className="absolute hidden group-hover:flex flex-col bg-white shadow-lg rounded-md  min-w-[150px] z-10">
+          <li><a href="/404page1" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">404page</a></li>
+          <li><a href="/aboutus" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">aboutus</a></li>
+          <li><a href="/blogdetail" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">blogdetail</a></li>
+          <li><a href="/blogpage" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">blogpage</a></li>
+          <li><a href="/faqpage" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">faqpage</a></li>
+          <li><a href="/menu" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">menu</a></li>
+          <li><a href="/ourchefs" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">ourchefs</a></li>
+          <li><a href="/restaurant" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">restaurant</a></li>
+          <li><a href="/shoplist" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">shoplist</a></li>
+          <li><a href="/shoppingcart" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">shoppingcart</a></li>
+          <li><a href="/signin" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">signin</a></li>
+          <li><a href="/signup" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">signup</a></li>
+        </ul>
+  </li>
+
+  {/* Other Links */}
+  <li className="max-lg:border-b max-lg:py-3 px-3">
+    <a href="/menu" className="text-[#333] hover:text-[#007bff] text-[15px] block font-semibold">
+      Menu
+    </a>
+  </li>
+  <li className="max-lg:border-b max-lg:py-3 px-3">
+    <a href="/blog" className="text-[#333] hover:text-[#007bff] text-[15px] block font-semibold">
+      Blog
+    </a>
+  </li>
+  <li className="max-lg:border-b max-lg:py-3 px-3">
+    <a href="/shop" className="text-[#333] hover:text-[#007bff] text-[15px] block font-semibold">
+      Shop
+    </a>
+  </li>
+  <li className="max-lg:border-b max-lg:py-3 px-3">
+    <a href="/contact" className="text-[#333] hover:text-[#007bff] text-[15px] block font-semibold">
+      Contact
+    </a>
+  </li>
+</ul>
+
             </div>
   
             <div className="flex items-center gap-x-6 gap-y-4 ml-auto">

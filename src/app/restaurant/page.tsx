@@ -71,6 +71,7 @@ export default function Restaurant() {
               </button>
             </div>
           </div>
+    
           <div className="flex flex-col items-center">
   {/* Upper Image */}
   <div className="w-full max-w-4xl mb-4">
@@ -90,7 +91,7 @@ export default function Restaurant() {
         src="rs3.png"
       />
     </div>
-    <div>
+   <div>
       <img
         className="object-cover object-center rounded-lg"
         alt="Content Image"
@@ -100,7 +101,119 @@ export default function Restaurant() {
   </div>
 </div>
 </div>
-      </section>
+</section>
+
+<div className="md:w-1/2 lg:pr-24 md:pr-16 flex flex-col items-center text-center">
+  <h1 className="text-center font-great-vibes text-[32px] mb-4 font-medium text-[#FF9F0D]"> 
+    Food Category</h1>
+  <h1 className="title-font sm:text-4xl text-3xl mb-2 font-medium text-white">
+    Choose Food Iteam</h1>
+</div>
+
+<div className="flex flex-wrap justify-center gap-4 items-center w-full">
+  {/* Each Image */}
+  <div className="w-1/4 max-w-sm">
+    <img
+      className="object-cover object-center rounded-lg"
+      alt="Content Image"
+      src="rs5.png"
+    />
+  </div>
+  <div className="w-1/4 max-w-sm">
+    <img
+      className="object-cover object-center rounded-lg"
+      alt="Content Image"
+      src="rs6.png"
+    />
+  </div>
+  <div className="w-1/4 max-w-sm">
+    <img
+      className="object-cover object-center rounded-lg"
+      alt="Content Image"
+      src="rs7.png"
+    />
+  </div>
+  <div className="w-1/4 max-w-sm">
+    <img
+      className="object-cover object-center rounded-lg"
+      alt="Content Image"
+      src="rs8.png"
+    />
+  </div>
+</div>
+
+
+<div className="grid grid-cols-2"></div>
+          <div>
+          <img
+                className="w-full h-full p-2 space-y-2"
+                src="/rs9.png"
+                alt="Menu Item"
+              />
+          </div>
+
+<div className="grid grid-cols-2"></div>
+          <div>
+          <img
+                className="w-full h-full p-2 space-y-2"
+                src="/om6.png"
+                alt="Menu Item"
+              />
+          </div>
+
+<div className="grid grid-cols-2"></div>
+          <div>
+          <img
+                className="w-full h-full p-2 space-y-2"
+                src="/rs10.png"
+                alt="Menu Item"
+              />
+          </div>
+
+          <div className="md:w-1/2 lg:pr-24 md:pr-16 flex flex-col items-center text-center">
+  <h1 className="text-center font-great-vibes text-[32px] mb-2 font-medium text-[#FF9F0D]"> 
+    Chefs</h1>
+  <h1 className="text-center title-font sm:text-4xl text-3xl mb-2 font-medium text-white">
+  Meet Our Chef</h1>
+</div>
+
+<div className="flex flex-wrap justify-center gap-4 items-center w-full">
+  {/* Each Image */}
+  <div className="w-1/4 max-w-sm">
+    <img
+      className="object-cover object-center rounded-lg"
+      alt="Content Image"
+      src="rs11.png"
+    />
+  </div>
+  <div className="w-1/4 max-w-sm">
+    <img
+      className="object-cover object-center rounded-lg"
+      alt="Content Image"
+      src="rs12.png"
+    />
+  </div>
+  <div className="w-1/4 max-w-sm">
+    <img
+      className="object-cover object-center rounded-lg"
+      alt="Content Image"
+      src="rs13.png"
+    />
+  </div>
+  <div className="w-1/4 max-w-sm">
+    <img
+      className="object-cover object-center rounded-lg"
+      alt="Content Image"
+      src="rs14.png"
+    />
+  </div>
+</div>
+
+<button className="flex-1 text-white bg-[#FF9F0D] py-2.5 px-4 rounded hover:bg-orange-500 transition-colors">
+                Proceed to shipping
+              </button>
+
+          
       </div>
     </>    
     
