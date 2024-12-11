@@ -95,6 +95,39 @@ export default function ShopDetail() {
           </div>
         </div>
 
+        {/* Tabs Section */}
+        <div className="bg-[#F1F0FF] py-8">
+          <div className="container mx-auto px-4 flex justify-center">
+            <div className="w-full sm:w-[90%] lg:w-1/2 rounded-md shadow-sm">
+              {/* Tabs Navigation */}
+              <ul className="flex justify-between items-center space-x-6 border-b pb-4">
+                {["Description", "Additional Info", "Reviews", "Video"].map((tab, index) => (
+                  <li
+                    key={index}
+                    className="text-xl font-semibold cursor-pointer text-[#151875] transition-colors"
+                  >
+                    {tab}
+                  </li>
+                ))}
+              </ul>
+
+              {/* Tabs Content */}
+              <div className="mt-6 text-[#151875]">
+                <h3 className="text-2xl font-bold">Varius tempor.</h3>
+                <p className="mt-4">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus
+                  enim. Proin volutpat ultrices felis, in malesuada sem.
+                </p>
+                <h3 className="mt-6 text-2xl font-bold">More Details.</h3>
+                <p className="mt-4">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus
+                  enim. Proin volutpat ultrices felis, in malesuada sem.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Related Products Section */}
         <div className="p-4 lg:max-w-7xl max-w-lg mx-auto">
           <h3 className="text-2xl font-bold text-center mb-6 text-[#151875]">Related Products</h3>

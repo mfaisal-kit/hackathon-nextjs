@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      // fontFamily: {
+      //   "great-vibes":['Great Vibes','cursive']
+      // },
+
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
