@@ -13,15 +13,21 @@ export default function SignUp() {
           <div className="text-sm">Home &gt; Blog Detail</div>
         </div>
       </div>
-
-      {/* Blog Content Section */}
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-6">
+       <div className="container mx-auto px-4">
+       <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-6">
           {/* Main Content */}
-          <div>
+
+         <div>
+         <img 
+        src="bd1.png"
+        />
+
+        <p className="text-white bg-[#FF9F0D] ">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. 
+          </p>
             {/* First Paragraph */}
             <p className="text-left text-gray-700 mb-6">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+               <br />Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
             </p>
 
             {/* Flexbox for 2nd and 3rd Paragraphs with Image */}
@@ -53,8 +59,71 @@ export default function SignUp() {
             <p className="text-left text-gray-700 mt-6">
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
             </p>
-          </div>
+  
+    <div className="flex justify-between items-center border border-gray-300 rounded-md p-4 w-full mx-auto">
+      {/* Left Section: Tags */}
+      <div className="flex items-start space-x-6 text-gray-600">
+        <p className="font-semibold text-gray-700">Tags:</p>
+        <span className="text-sm">Restaurant, Dinner, Pizza, Yummy</span>
+      </div>
 
+      {/* Right Section: Share Icons */}
+      <div className="flex items-center justift-right space-x-2">
+        <p className="font-semibold text-gray-700">Share:</p>
+
+        {/* Facebook */}
+        <a href="#" aria-label="Share on Facebook">
+          <svg
+            className="w-6 h-6 text-gray-500 hover:text-blue-600 transition-colors duration-300"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2.2V12h2.2V9.8c0-2.2 1.3-3.5 3.4-3.5.7 0 1.6.1 2.2.2v2.4h-1.2c-1.1 0-1.4.7-1.4 1.3V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z" />
+          </svg>
+        </a>
+
+        {/* Twitter */}
+        <a href="#" aria-label="Share on Twitter">
+          <svg
+            className="w-6 h-6 text-gray-500 hover:text-blue-400 transition-colors duration-300"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path d="M23 3a10.9 10.9 0 0 1-3.1.9 4.8 4.8 0 0 0 2.1-2.7 9.6 9.6 0 0 1-3.1 1.2 4.8 4.8 0 0 0-8.2 4.4 13.7 13.7 0 0 1-10-5 4.7 4.7 0 0 0-.6 2.4c0 1.6.8 3 2.1 3.8a4.8 4.8 0 0 1-2.2-.6v.1c0 2.2 1.5 4 3.6 4.4a4.8 4.8 0 0 1-2.2.1 4.8 4.8 0 0 0 4.5 3.4 9.6 9.6 0 0 1-6 2.1A9.5 9.5 0 0 1 1 19.1a13.6 13.6 0 0 0 7.5 2.2c9 0 14-7.4 14-14v-.6A10 10 0 0 0 23 3z" />
+          </svg>
+        </a>
+
+        {/* Instagram */}
+        <a href="#" aria-label="Share on Instagram">
+          <svg
+            className="w-6 h-6 text-gray-500 hover:text-pink-500 transition-colors duration-300"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.3.1 2.3.3 3.1.6a6.1 6.1 0 0 1 2.2 1.5 6.1 6.1 0 0 1 1.5 2.2c.3.8.5 1.8.6 3.1.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.3-.3 2.3-.6 3.1a6.1 6.1 0 0 1-1.5 2.2 6.1 6.1 0 0 1-2.2 1.5c-.8.3-1.8.5-3.1.6-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.3-.1-2.3-.3-3.1-.6a6.1 6.1 0 0 1-2.2-1.5 6.1 6.1 0 0 1-1.5-2.2c-.3-.8-.5-1.8-.6-3.1C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.3.3-2.3.6-3.1a6.1 6.1 0 0 1 1.5-2.2A6.1 6.1 0 0 1 5.9 2.3c.8-.3 1.8-.5 3.1-.6 1.3-.1 1.7-.1 4.9-.1z" />
+          </svg>
+        </a>
+
+        {/* Pinterest */}
+        <a href="#" aria-label="Share on Pinterest">
+          <svg
+            className="w-6 h-6 text-gray-500 hover:text-red-600 transition-colors duration-300"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.25 3.4 9.72 8.1 11.29-.11-.96-.21-2.43.04-3.48.22-.93 1.42-5.94 1.42-5.94s-.36-.72-.36-1.78c0-1.66.96-2.9 2.16-2.9 1.02 0 1.52.77 1.52 1.7 0 1.04-.66 2.6-1 4.04-.28 1.17.6 2.12 1.78 2.12 2.14 0 3.78-2.26 3.78-5.52 0-2.88-2.07-4.89-5.04-4.89-3.44 0-5.46 2.58-5.46 5.24 0 .98.38 2.04.86 2.61.1.12.12.23.08.35-.09.38-.28 1.18-.32 1.34-.05.22-.18.27-.41.16-1.54-.72-2.5-2.97-2.5-4.77C4 6.79 7.21 3 12 3c4.97 0 9 4.03 9 9s-4.03 9-9 9a9.6 9.6 0 0 1-2.1-.23c-.4-.1-.92-.32-1.42-.55a10.6 10.6 0 0 0 2.52-1.85c1.78-1.67 2.9-4.1 2.9-6.92z" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+
+    </div>
+         
          {/* Search Box */}
 <div className="flex flex-col space-y-4">
   {/* Input and Search Button */}
@@ -363,7 +432,7 @@ export default function SignUp() {
                   </div>
                  
       </div>
-      <section className="text-gray-600 body-font">
+      {/* <section className="text-gray-600 body-font">
   <div className="container px-5 mx-auto">
     <div className="flex flex-col text-left w-full">
       <h1 className="text-[20px] font-semibold text-black">
@@ -427,7 +496,7 @@ export default function SignUp() {
       </div>
     </div>
   </div>
-</section>
+</section> */}
 
     </div>
 </div>

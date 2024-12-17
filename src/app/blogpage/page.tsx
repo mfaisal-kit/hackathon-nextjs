@@ -1,56 +1,102 @@
-export default function BlogPage() {
+export default function SignUp() {
   return (
-    <div className="container mx-auto px-4 py-6">
-      {/* Top Section */}
-      <div className="bg-[#F1F0FF] py-8">
-        <div className="text-center lg:text-left lg:ml-[300px]">
-          <h2 className="text-[#101750] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold">
-            Blog Page
-          </h2>
-          <p className="text-sm text-gray-600">
-            Home. Pages. <span className="text-[#FB2E86]">Blog Page</span>
-          </p>
+    <div>
+      {/* Image Section */}
+      <div className="relative w-full h-[40vh] mb-10">
+        <img
+          className="w-full h-full object-cover"
+          src="/sip.png" // Ensure the correct path to your image
+          alt="Sign Up"
+        />
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-3xl font-semibold">
+          <div>Blog List</div>
+          <div className="text-sm">Home &gt; Blog</div>
         </div>
       </div>
 
       {/* Main Content Section */}
       <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-6 mt-6">
-        {/* Blog Content (Left Sidebar) */}
-        <div>
-          {[1, 2, 3, 4].map((blog, index) => (
-            <div key={index} className="bg-white shadow-sm rounded-lg p-6 mb-6">
-              <img
-                src={`blg${blog}.png`}
-                alt={`Blog ${blog}`}
-                className="w-full h-auto rounded-md bg-[#F4F4FC]"
-              />
-              <div className="space-y-2 mt-4">
-                <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                  <span className="px-4 py-2 bg-[#FFE7F9] text-[#151875] rounded-md">
-                    Surf Auction
-                  </span>
-                  <span className="px-4 py-2 bg-[#FFE7F9] text-[#151875] rounded-md">
-                    August 09
-                  </span>
-                </div>
-                <h3 className="text-lg text-[#151875] font-semibold">
-                  {[
-                    "Mauris at orci non vulputate diam tincidunt nec.",
-                    "Aenean vitae in aliquam ultrices lectus. Etiam.",
-                    "Sit nam congue feugiat nisl, mauris amet nisi.",
-                  ][index % 3]}
-                </h3>
-                <p className="text-gray-400">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quasi, repellendus suscipit atque quo voluptas ratione magnam soluta.
-                </p>
-                <p className="text-[#151875] underline cursor-pointer">Read More.</p>
-              </div>
-            </div>
-          ))}
+       {/* Blog Content (Left Sidebar) */}
+<div>
+  {[
+    {
+      id: 1,
+      title: "10 Reasons To Do A Digital Detox Challenge",
+      description:
+        "Taking a digital detox helps improve mental health and reduces stress caused by constant notifications and screen time. Challenge yourself to reconnect with the real world.",
+      date: "Feb 14, 2022",
+      author: "Admin",
+      image: "blg1.png",
+    },
+    {
+      id: 2,
+      title: "Traditional Soft Pretzels with Sweet Beer Cheese",
+      description:
+        "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.",
+      date: "Mar 05, 2022",
+      author: "Admin",
+      image: "blg2.png",
+    },
+    {
+      id: 3,
+      title: "The Ultimate Hangover Burger: Egg in a Hole Burger",
+      description:
+        "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.",
+      date: "Apr 21, 2022",
+      author: "Admin",
+      image: "blg3.png",
+    },
+    {
+      id: 4,
+      title: "My Favorite Easy Black Pizza Toast Recipe",
+      description:
+        "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.",
+      date: "May 12, 2022",
+      author: "Admin",
+      image: "blg4.png",
+    },
+  ].map((blog) => (
+    <div key={blog.id} className="bg-white shadow-sm rounded-lg p-6 mb-6">
+      <img
+        src={blog.image}
+        alt={`Blog ${blog.id}`}
+        className="w-full h-auto rounded-md bg-[#F4F4FC]"
+      />
+      <div className="space-y-2 mt-4">
+        <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+          <span className="px-4 py-2 text-black rounded-md">
+            {blog.date} /
+          </span>
+          <span className="px-4 py-2 text-black rounded-md">
+            3/ {blog.author}
+          </span>
         </div>
+        <h3 className="text-lg text-black font-semibold">{blog.title}</h3>
+        <p className="text-gray-400">{blog.description}</p>
+      </div>
+      {/* Input and Search Button */}
+      <div className="flex items-center">
+        <button
+          type="button"
+          className="px-3 py-1 text-sm text-white bg-[#FF9F0D] hover:bg-orange-500 rounded-md"
+        >
+          Read More
+        </button>
+      </div>
+    </div>
+  ))}
 
-        {/* Right Sidebar */}
+    <div >
+        <img 
+        src="blg5.png" 
+        alt="Centered Image"
+        className="center-container"
+        />
+    </div>
+
+</div>
+
+ {/* Right Sidebar */}
         <div className="flex flex-col space-y-4">
   {/* Input and Search Button */}
   <div className="flex items-center border border-gray-300 rounded overflow-hidden">
@@ -79,6 +125,7 @@ export default function BlogPage() {
       </svg>
     </button>
   </div>
+  
 
   {/* Section */}
   <section className="text-gray-600 body-font">
@@ -97,21 +144,7 @@ export default function BlogPage() {
         </h1>
         <p className="mb-4 leading-relaxed">Blogger/Photographer</p>
 
-        {/* Rating */}
-        <div className="flex items-center w-[165px] h-[5px] leading-relaxed space-x-1">
-          {/* Stars */}
-          {[...Array(5)].map((_, i) => (
-            <svg
-              key={i}
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 text-yellow-500"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.943a1 1 0 00.95.69h4.144c.969 0 1.371 1.24.588 1.81l-3.356 2.44a1 1 0 00-.364 1.118l1.287 3.943c.3.921-.755 1.688-1.54 1.118l-3.356-2.44a1 1 0 00-1.175 0l-3.356 2.44c-.784.57-1.838-.197-1.54-1.118l1.287-3.943a1 1 0 00-.364-1.118L2.97 9.37c-.784-.57-.38-1.81.588-1.81h4.144a1 1 0 00.95-.69L9.049 2.927z" />
-            </svg>
-          ))}
-        </div>
+        className="text-[48px] font-bold text-left"
 
         {/* Review Count */}
         <p>(1 Review)</p>
