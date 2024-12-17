@@ -144,7 +144,7 @@ export default function SignUp() {
         </h1>
         <p className="mb-4 leading-relaxed">Blogger/Photographer</p>
 
-        className="text-[48px] font-bold text-left"
+        
 
         {/* Review Count */}
         <p>(1 Review)</p>
