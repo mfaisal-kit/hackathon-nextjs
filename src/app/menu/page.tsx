@@ -49,7 +49,7 @@ export default function SignUp() {
       detail2: "1000 CAL",
     },
     {
-      price: "$35",
+      price: "35$",
       name: "Spicy Vegan Potato Curry",
       detail1: "Spreadable cream cheese, crumbled blue cheese",
       detail2: "560 CAL",

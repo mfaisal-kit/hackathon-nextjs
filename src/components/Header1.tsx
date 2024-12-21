@@ -1,7 +1,13 @@
 
-export default function Header(){
-    return(
-      <>
+export default function Header1() {
+    return (
+        <>
+      <div className="w-full h-[48px] bg-[#000000] flex items-center justify-center">
+        <p className="text-[14px] leading-[24px]">
+          <span className="text-[#FF9F0D]">Food</span>
+          <span className="text-white">tuck</span>
+        </p>
+      </div>
   <div className='flex bg-black border-b py-3 sm:px-6 px-12 font-[sans-serif] min-h-[75px] tracking-wide relative z-80'>
        <div className="w-[1170px] h-[38px] mt-10 relative left-[135px] flex">
         <div className="w-[674px] h-[24px] gap-[190px] flex ">
@@ -124,12 +130,7 @@ export default function Header(){
   
             <div className="flex items-center gap-x-6 gap-y-">
   {/* Search Box with Icon in the Right Corner */}
-  <div className="relative text-white bg-black w-[310px] border border-[#FF9F0D] rounded-full px-4 py-2.5 max-w-52 max-lg:hidden">
-    <input
-      type="text"
-      placeholder="Search"
-      className="w-[200px] text-sm bg-transparent  pl-4 pr-10"
-    />
+  <div className="cursor-pointer">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 192.904 192.904"
@@ -141,6 +142,17 @@ export default function Header(){
       />
     </svg>
   </div>
+
+  <div className="relative mb-4 flex items-center border rounded bg-white">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-6 w-6 text-gray-500"
+      fill="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path d="M12 2a7 7 0 1 1 0 14 7 7 0 0 1 0-14zm0 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 12c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5zm0 2c2.88 0 7.75 1.44 7.97 3H4.03c.22-1.56 5.09-3 7.97-3z" />
+    </svg>
+</div>
 
   {/* Handbag Icon */}
   <div className="cursor-pointer">

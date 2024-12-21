@@ -18,57 +18,85 @@ export default function SignUp() {
 
         {/* Main Content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Shipping Address Section */}
-          <div className="col-span-2">
-            <h1 className="text-2xl font-semibold mb-6">Shipping Address</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Left Column */}
-              <div>
-                {[
-                  { label: "First Name", id: "first-name", type: "text" },
-                  { label: "Email Address", id: "email", type: "email" },
-                  { label: "Company", id: "company", type: "text" },
-                  { label: "City", id: "city", type: "text",placeholder: "Choose City" },
-                  { label: "Address 1", id: "address1", type: "text" },
-                ].map((field) => (
-                  <div key={field.id} className="relative mb-4">
-                    <label htmlFor={field.id} className="block text-sm text-gray-600 mb-2">
-                      {field.label}
-                    </label>
-                    <input
-                      type={field.type}
-                      id={field.id}
-                      name={field.id}
-                      placeholder={field.placeholder}
-                      className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base text-gray-700 py-2 px-4 transition-colors"
-                    />
-                  </div>
-                ))}
+  {/* Shipping Address Section */}
+  <div className="col-span-2">
+    <h1 className="text-2xl font-semibold mb-6">Shipping Address</h1>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* Left Column */}
+      <div>
+        {[
+          { label: "First Name", id: "first-name", type: "text" },
+          { label: "Email Address", id: "email", type: "email" },
+          { label: "Company", id: "company", type: "text" },
+          { label: "City", id: "city", type: "text", placeholder: "Choose City" },
+          { label: "Address 1", id: "address1", type: "text" },
+        ].map((field) => (
+          <div key={field.id} className="relative mb-4">
+            <label htmlFor={field.id} className="block text-sm text-gray-600 mb-2">
+              {field.label}
+            </label>
+            <div className="relative">
+              <input
+                type={field.type}
+                id={field.id}
+                name={field.id}
+                placeholder={field.placeholder}
+                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base text-gray-700 py-2 px-4 pr-10 transition-colors"
+              />
+              {field.id === "city" && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-500 pointer-events-none"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              )}
+            </div>
+          </div>
+        ))}
+
               </div>
 
               {/* Right Column */}
               <div>
-                {[
-                  { label: "Last Name", id: "last-name", type: "text" },
-                  { label: "Phone Number", id: "phone", type: "text" },
-                  { label: "Country", id: "country", type: "text",placeholder: "Choose Country"  },
-                  { label: "Zip Code", id: "zip", type: "text" },
-                  { label: "Address 2", id: "address2", type: "text" },
-                ].map((field) => (
-                  <div key={field.id} className="relative mb-4">
-                    <label htmlFor={field.id} className="block text-sm text-gray-600 mb-2">
-                      {field.label}
-                    </label>
-                    <input
-                      type={field.type}
-                      id={field.id}
-                      name={field.id}
-                      placeholder={field.placeholder}
-                      className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base text-gray-700 py-2 px-4 transition-colors"
-                    />
-                  </div>
-                ))}
-              </div>
+  {[
+    { label: "Last Name", id: "last-name", type: "text" },
+    { label: "Phone Number", id: "phone", type: "text" },
+    { label: "Country", id: "country", type: "text", placeholder: "Choose Country" },
+    { label: "Zip Code", id: "zip", type: "text" },
+    { label: "Address 2", id: "address2", type: "text" },
+  ].map((field) => (
+    <div key={field.id} className="relative mb-4">
+      <label htmlFor={field.id} className="block text-sm text-gray-600 mb-2">
+        {field.label}
+      </label>
+      <div className="relative">
+        <input
+          type={field.type}
+          id={field.id}
+          name={field.id}
+          placeholder={field.placeholder}
+          className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base text-gray-700 py-2 px-4 pr-10 transition-colors"
+        />
+        {field.id === "country" && (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-500 pointer-events-none"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        )}
+      </div>
+    </div>
+  ))}
+</div>
+
             </div>
 
             {/* Billing Address */}
@@ -100,31 +128,44 @@ export default function SignUp() {
 
           {/* Order Summary Section */}
           <div>
-            <div className="bg-gray-100 rounded-md p-4 space-y-6">
-              {/* Product List */}
-              {[{
-                name: "Chicken Tikka Kabab",
-                weight: "150 gm net",
-                price: "$50",
-                image: "Chicken.png"
-              }, {
-                name: "Chicken Tikka Kabab",
-                weight: "150 gm net",
-                price: "$50",
-                image: "Chicken.png"
-              }, {
-                name: "Chicken Tikka Kabab",
-                weight: "150 gm net",
-                price: "$50",
-                image: "Chicken.png"
-              }].map((product, index) => (
-                <div key={index} className="flex items-center gap-4">
-                  <img src={product.image} alt={product.name} className="bg-gray-100 h-20 w-auto" />
-                  <h4 className="text-sm text-[#FB2E86] font-semibold">
-                    {product.name} - {product.price}
-                  </h4>
-                </div>
-              ))}
+  <div className="bg-gray-100 rounded-md p-4 space-y-6">
+    {/* Product List */}
+    {[
+      {
+        name: "Chicken Tikka Kabab",
+        weight: "150 gm net",
+        price: "$50",
+        image: "Chicken.png",
+      },
+      {
+        name: "Chicken Tikka Kabab",
+        weight: "150 gm net",
+        price: "$50",
+        image: "Chicken.png",
+      },
+      {
+        name: "Chicken Tikka Kabab",
+        weight: "150 gm net",
+        price: "$50",
+        image: "Chicken.png",
+      },
+    ].map((product, index) => (
+      <div key={index} className="flex items-center gap-4">
+        {/* Product Image */}
+        <img
+          src={product.image}
+          alt={product.name}
+          className="bg-gray-100 h-20 w-auto"
+        />
+        {/* Product Details */}
+        <div className="text-sm text-black">
+          <h4 className="font-semibold">{product.name}</h4>
+          <p className="text-gray-600">{product.weight}</p>
+          <p className="font-bold">{product.price}</p>
+        </div>
+      </div>
+    ))}
+  </div>
 
               {/* Pricing Details */}
               <ul className="text-gray-800 space-y-4">
@@ -154,7 +195,6 @@ export default function SignUp() {
               </button>
             </div>
           </div>
-        </div>
       </div>
     </div>
   );

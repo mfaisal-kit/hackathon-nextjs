@@ -19,7 +19,7 @@ export default function SignUp() {
           <div className="container px-5 py-4 mx-auto">
             <div className="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
               <h1 className="text-4xl md:text-7xl font-bold text-[#FF9F0D] mb-6">404</h1> {/* Added margin-bottom */}
-              <p className="leading-relaxed text-lg md:text-xl text-gray-700 mb-4">
+              <p className="leading-relaxed font-bold text-lg md:text-xl text-gray-800 mb-4">
                 Oops! Looks like something went wrong.
               </p>
               <p className="text-gray-900 font-medium text-center title-font tracking-wider text-sm mb-2">

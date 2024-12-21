@@ -79,29 +79,52 @@ export default function SignUp() {
                 </tr>
               </thead>
               <tbody>
-                {products.map((product, index) => (
-                  <tr key={index}>
-                    <td className="px-4">
-                      <div className="bg-gray-100 rounded-md p-4 flex items-center gap-4">
-                        <img
-                          src={product.image}
-                          alt={product.name}
-                          className="bg-gray-100 h-20 w-20 object-cover rounded"
-                        />
-                        <h4 className="text-sm text-black font-semibold">{product.name}</h4>
-                      </div>
-                    </td>
-                    <td className="px-4 py-3">${product.price.toFixed(2)}</td>
-                    <td className="px-4 py-3">{product.quantity}</td>
-                    <td className="px-4 py-3 text-lg text-gray-900">
-                      ${product.total.toFixed(2)}
-                    </td>
-                    <td className="w-10 text-center">
-                    <button className="text-red-500 hover:underline">&#10005;</button>
-                    </td>
-                    </tr>
-                ))}
-              </tbody>
+  {products.map((product, index) => (
+    <tr key={index}>
+      <td className="px-4">
+        <div className="bg-gray-100 rounded-md p-4 flex items-center gap-4">
+          <img
+            src={product.image}
+            alt={product.name}
+            className="bg-gray-100 h-20 w-20 object-cover rounded"
+          />
+          <div>
+            <h4 className="text-sm text-black font-semibold">{product.name}</h4>
+            {/* Stars on the next line */}
+            <div className="flex text-yellow-400 mt-1">
+              {[...Array(5)].map((_, i) => (
+                <svg
+                  key={i}
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill={i < 3 ? "currentColor" : "none"} // Fill 3 out of 5 stars
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  className="h-4 w-4"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.254 6.919a1 1 0 00.95.69h7.243c.969 0 1.371 1.24.588 1.81l-5.892 4.136a1 1 0 00-.364 1.118l2.254 6.919c.3.921-.755 1.688-1.539 1.118l-5.892-4.136a1 1 0 00-1.175 0l-5.892 4.136c-.784.57-1.838-.197-1.539-1.118l2.254-6.919a1 1 0 00-.364-1.118L.588 11.346c-.783-.57-.38-1.81.588-1.81h7.243a1 1 0 00.95-.69l2.254-6.919z"
+                  />
+                </svg>
+              ))}
+            </div>
+          </div>
+        </div>
+      </td>
+      <td className="px-4 py-3">${product.price.toFixed(2)}</td>
+      <td className="px-4 py-3">{product.quantity}</td>
+      <td className="px-4 py-3 text-lg text-gray-900">
+        ${product.total.toFixed(2)}
+      </td>
+      <td className="w-10 text-center">
+        <button className="text-black hover:underline">&#10005;</button>
+      </td>
+    </tr>
+  ))}
+</tbody>
+
             </table>
           </div>
         </div>
