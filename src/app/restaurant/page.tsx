@@ -193,14 +193,131 @@ export default function Restaurant() {
               />
           </div>
 
-<div className="grid grid-cols-2"></div>
+{/* <div className="grid grid-cols-2"></div>
           <div>
           <img
                 className="w-full h-full p-2 space-y-2"
                 src="/rs10.png"
                 alt="Menu Item"
               />
-          </div>
+          </div> */}
+
+          
+<div className="flex flex-col items-center justify-center text-center w-full mb-8">
+  <h1 className="font-great-vibes text-[32px] mb-4 font-medium text-[#FF9F0D]">
+    Choose & Pick
+  </h1>
+  <h1 className="title-font sm:text-4xl text-3xl font-medium text-white">
+  <span className="text-[#FF9F0D]">Fr</span>om Our Menu
+  </h1>
+  <p className="text-semibold text-white text-lg gap-6">
+  <span style={{ color: '#FF9F0D' }}>Breakfast</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Lunch &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Dinner &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Dessert &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Drink &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Snack &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Soups
+</p>
+
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+  {/* Column 1: Background and Overlay Image */}
+  <div style={{ position: 'relative', display: 'inline-block' }}>
+    <img 
+      src="rs30.png" 
+      alt="Background Image" 
+      style={{ display: 'block' }} 
+    />
+    <img 
+      src="rs29.png" 
+      alt="Centered Overlay Image" 
+      style={{ 
+        position: 'absolute', 
+        top: '50%', 
+        left: '50%', 
+        transform: 'translate(-50%, -50%)' 
+      }} 
+    />
+  </div>
+
+  {/* Column 2: Images with Titles, Descriptions, and Prices */}
+  <div>
+    <div className="flex items-center gap-4 mb-4">
+      <img src="rs21.png" alt="Image 21" className="w-16 h-16" />
+      
+      <div className="text-left">
+  <h3 className="text-white font-semibold text-lg">Lettuce Leaf</h3>
+  <p className="text-white text-sm">Lacus nisi, et ac dapibus velit in consequat.</p>
+  <p className="font-bold" style={{ color: '#FF9F0D' }}>12.5$</p>
+</div>
+
+    </div>
+    <div className="flex items-center gap-4 mb-4">
+      <img src="rs22.png" alt="Image 22" className="w-16 h-16" />
+      <div className="text-left">
+        <h3 className="text-white font-semibold text-lg">Fresh Breakfast</h3>
+        <p className="text-white text-sm">Lacus nisi, et ac dapibus velit in consequat.</p>
+        <p className="font-bold" style={{ color: '#FF9F0D' }}>14.5$</p>
+      </div>
+    </div>
+    <div className="flex items-center gap-4 mb-4">
+      <img src="rs23.png" alt="Image 23" className="w-16 h-16" />
+      <div className="text-left">
+        <h3 className="text-white font-semibold text-lg">Mild Butter</h3>
+        <p className="text-white text-sm">Lacus nisi, et ac dapibus velit in consequat.</p>
+        <p className="font-bold" style={{ color: '#FF9F0D' }}>12.5$</p>
+      </div>
+    </div>
+    <div className="flex items-center gap-4 mb-4">
+      <img src="rs24.png" alt="Image 24" className="w-16 h-16" />
+      <div className="text-left">
+        <h3 className="text-white font-semibold text-lg">Fresh Bread</h3>
+        <p className="text-white text-sm">Lacus nisi, et ac dapibus velit in consequat.</p>
+        <p className="font-bold" style={{ color: '#FF9F0D' }}>12.5$</p>
+      </div>
+    </div>
+  </div>
+
+  {/* Column 3: Images with Titles, Descriptions, and Prices */}
+  <div>
+    <div className="flex items-center gap-4 mb-4">
+      <img src="rs25.png" alt="Image 25" className="w-16 h-16" />
+      <div className="text-left">
+        <h3 className="text-white font-semibold text-lg">Glow Cheese</h3>
+        <p className="text-white text-sm">Lacus nisi, et ac dapibus velit in consequat.</p>
+        <p className="font-bold" style={{ color: '#FF9F0D' }}>12.5$</p>
+      </div>
+    </div>
+    <div className="flex items-center gap-4 mb-4">
+      <img src="rs26.png" alt="Image 26" className="w-16 h-16" />
+      <div className="text-left">
+        <h3 className="text-white font-semibold text-lg">Italian Pizza</h3>
+        <p className="text-white text-sm">Lacus nisi, et ac dapibus velit in consequat.</p>
+        <p className="font-bold" style={{ color: '#FF9F0D' }}>14.5$</p>
+      </div>
+    </div>
+    <div className="flex items-center gap-4 mb-4">
+      <img src="rs27.png" alt="Image 27" className="w-16 h-16" />
+      <div className="text-left">
+        <h3 className="text-white font-semibold text-lg">Slice Beef</h3>
+        <p className="text-white text-sm">Lacus nisi, et ac dapibus velit in consequat.</p>
+        <p className="font-bold" style={{ color: '#FF9F0D' }}>12.5$</p>
+      </div>
+    </div>
+    <div className="flex items-center gap-4 mb-4">
+      <img src="rs28.png" alt="Image 28" className="w-16 h-16" />
+      <div className="text-left">
+        <h3 className="text-white font-semibold text-lg">Mushroom Pizza</h3>
+        <p className="text-white text-sm">Lacus nisi, et ac dapibus velit in consequat.</p>
+        <p className="font-bold" style={{ color: '#FF9F0D' }}>12.5$</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+</div>
 
           <div className="flex flex-col items-center justify-center text-center w-full mb-12">
   <h1 className="font-great-vibes text-[32px] mb-2 mt-2 font-medium text-[#FF9F0D]"> 

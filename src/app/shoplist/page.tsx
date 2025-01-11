@@ -1,6 +1,8 @@
 import React from "react";
+import { GetShopListData } from "@/sanity/sanaity.query";
 
-export default function ShopList() {
+export default async function ShopList() {
+  const productData = await GetShopListData();
   const products = [
     { img: "img/products/os1.png", title: "Fresh Lime", price: "$38.00" },
     { img: "img/products/os2.png", title: "Chocolate Muffin", price: "$28.00" },
@@ -77,7 +79,7 @@ export default function ShopList() {
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
-          {products.map((product, index) => (
+          {productData.map((product:any, index:any) => (
             <div
               key={index}
               className="w-full h-full bg-white cursor-pointer hover:shadow-lg transition-all rounded-md flex flex-col p-4"
@@ -85,7 +87,7 @@ export default function ShopList() {
               {/* Image Section */}
               <div className="bg-gray-100 flex justify-center items-center w-[312px] h-[320px] rounded-md">
                 <img
-                  src={product.img}
+                  src={product.image}
                   alt={product.title}
                   className="max-h-full max-w-full object-contain"
                 />
