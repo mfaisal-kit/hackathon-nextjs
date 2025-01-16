@@ -1,4 +1,9 @@
-export default function SignUp() {
+import { GetFilterByMenuData } from "@/sanity/sanaity.query";
+import { GetRecantPostData } from "@/sanity/sanaity.query";
+
+export default async function SignUp() {
+  const product1= await GetFilterByMenuData();
+  const product2 = await GetRecantPostData();
   return (
     <div>
       {/* Image Section */}
@@ -125,6 +130,7 @@ export default function SignUp() {
     </div>
          
          {/* Search Box */}
+         <div>
 <div className="flex flex-col space-y-4">
   {/* Input and Search Button */}
   <div className="flex items-center border border-gray-300 rounded overflow-hidden">
@@ -271,74 +277,83 @@ export default function SignUp() {
       </div>
     </div>
   </section>
-        <div className="bg-gray-100 rounded-md p-4">
-          <h1 className="text-[20px] font-semibold">Recant Post</h1>
-              {/* Product List */}
-              {[{
-                date: "June 22, 2020",
-                name: "Lorem ipsum dolor sit cingelit, sed do.",
-                image: "bd4.png"
-              }, {
-                date: "June 22, 2020",
-                name: "Lorem ipsum dolor sit cingelit, sed do.",
-                image: "bd5.png"
-              }, {
-                date: "June 22, 2020",
-                name: "Lorem ipsum dolor sit cingelit, sed do.",
-                image: "bd6.png"
-              }, {
-                date: "June 22, 2020",
-                name: "Lorem ipsum dolor sit cingelit, sed do.",
-                image: "bd7.png"
-              }].map((product, index) => (
-                <div key={index} className="flex items-center gap-4">
-                  <img src={product.image} alt={product.name} className="bg-gray-100 h-20 w-auto" />
-                  <h4 className="text-sm text-black font-semibol font-Helvetica">
-                    {product.date} <br /><br /> {product.name}
-                  </h4>
-                </div>
-              ))}
+  {/* const recentPosts = [
+  {
+    date: "June 22, 2020",
+    name: "Lorem ipsum dolor sit cingelit, sed do.",
+    image: "bd4.png",
+  },
+  {
+    date: "June 22, 2020",
+    name: "Lorem ipsum dolor sit cingelit, sed do.",
+    image: "bd5.png",
+  },
+  {
+    date: "June 22, 2020",
+    name: "Lorem ipsum dolor sit cingelit, sed do.",
+    image: "bd6.png",
+  },
+  {
+    date: "June 22, 2020",
+    name: "Lorem ipsum dolor sit cingelit, sed do.",
+    image: "bd7.png",
+  },
+]; */}
 
-<div className="bg-gray-100 rounded-md p-2 space-y-2">
-          <h1 className="text-[20px] font-semibold">Filter By Menu</h1>
-              {/* Product List */}
-              {[{
-                price: "26",
-                name: "Chicken Fry",
-                image: "bd8.png"
-              }, {
-                price: "46",
-                name: "Burger Food",
-                image: "bd9.png"
-              }, {
-                price: "16",
-                name: "Pizza",
-                image: "bd10.png"
-              }, {
-                price: "36",
-                name: "Fresh fruits",
-                image: "bd11.png"
-              }, {
-                price: "16",
-                name: "Vegetables",
-                image: "bd12.png"
-              }].map((product, index) => (
-                <div key={index} className="flex justify-between items-center">
-                    {/* Left Side: Image and Product Name */}
-                    <div className="flex items-center">
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="bg-gray-100 h-20 w-auto mr-4" /* Added margin-right for spacing */
-                      />
-                      <p className="text-gray-600 text-sm">{product.name}</p>
-                    </div>
-
-                    {/* Right Side: Product Price */}
-                    <p className="text-gray-600 text-sm">{product.price}</p>
-                  </div>
-                ))}
+    <div className="bg-gray-100 rounded-md p-4">
+      <h1 className="text-[20px] font-semibold">Recent Post</h1>
+      {/* Product List */}
+      {product2.map((product:any, index:any) => (
+        <div key={index} className="flex items-center gap-4 mb-4">
+           <a href={`http://localhost:3000/shopdetail/${product.slug}`}>
+          <img
+            src={product.image}
+            alt={product.name}
+            className="bg-gray-100 h-20 w-auto rounded-md"
+          />
+          <h4 className="text-sm text-black font-semibold">
+            {product.date} <br />
+            <br /> {product.name}
+          </h4>
+          </a>
         </div>
+      ))}
+    </div>
+
+{/* const products = [
+  { price: "26", name: "Chicken Fry", image: "bd8.png" },
+  { price: "46", name: "Burger Food", image: "bd9.png" },
+  { price: "16", name: "Pizza", image: "bd10.png" },
+  { price: "36", name: "Fresh fruits", image: "bd11.png" },
+  { price: "16", name: "Vegetables", image: "bd12.png" }
+]; */}
+
+
+    <div className="bg-gray-100 rounded-md p-2 space-y-2">
+      <h1 className="text-[20px] font-semibold">Filter By Menu</h1>
+      {product1.map((product:any, index:any) => (
+        <div key={index} className="flex justify-between items-center">
+          {/* Left Side: Image and Product Name */}
+          <div className="flex items-center">
+          <a href={`http://localhost:3000/shopdetail/${product.slug}`}>
+            <img
+              src={product.image}
+              alt={product.name}
+              className="bg-gray-100 h-20 w-auto mr-4" /* Added margin-right for spacing */
+            />
+             </a>
+            <p className="text-gray-600 text-sm">{product.title}</p>
+           
+          </div>
+
+          {/* Right Side: Product Price */}
+          <a href={`http://localhost:3000/shopdetail/${product.slug}`}>
+          <p className="text-gray-600 text-sm">{product.price}</p>
+          </a>
+          </div>
+      ))}
+    </div>
+
         <h1 className="text-[20px] font-semibold">
         Popular Tabs</h1>
        
@@ -595,13 +610,14 @@ export default function SignUp() {
 </div>
 
     </div>
-  </div>
+    </div>
 </section>
-
-    </div>
 </div>
 </div>
+</div>
 
-    </div>
+</div>
+    
+
   );
 }

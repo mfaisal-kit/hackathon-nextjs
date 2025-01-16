@@ -1,13 +1,15 @@
 import Image from 'next/image';
-// import FlashSales from '@/components/FlashSales';
-// import InfoIcons from '@/components/InfoIcons';
-// import NewArrival from '@/components/NewArrival';
-// import BestSelling from '@/components/BestSelling';
-// import ExploreProducts from '@/components/ExploreProducts';
-// import VMenu from '@/components/VMenu';
-// import HomeProducts1 from '@/components/HomeProduct1';
+import { GetFromOurMenuData1 } from '@/sanity/sanaity.query';
+import { GetFromOurMenuData2 } from '@/sanity/sanaity.query';
+import { GetChooseFoodItemData } from '@/sanity/sanaity.query';
+import { GetBlogPostData } from '@/sanity/sanaity.query';
 
-export default function Home() {
+export default async function Home() {
+  const productData1 = await GetFromOurMenuData1();
+  const productData2 = await GetFromOurMenuData2();
+  const productData3 = await GetChooseFoodItemData();
+  const productData4 = await GetBlogPostData();
+
   return (
     <>
      
@@ -132,58 +134,52 @@ export default function Home() {
   </h1>
 </div>
 
-<div className="flex flex-wrap justify-center gap-4 items-center w-full">
+<div className="flex flex-wrap justify-center items-center w-full">
   {/* Each Image */}
-  <div className="w-1/4 max-w-sm">
+  <div className="w-full ">
 
-  <div className="relative w-full max-w-4xl mb-4">
-  {/* Image */}
- 
-  <img
-      className="object-cover object-center rounded-lg"
-      alt="Content Image"
-      src="rs5.png"
-    />
+  {/* const imageData = [
+  {
+    src: "rs5.png",
+    mainText: "Save 30%",
+    subText: "Fast Food Dish",
+    mainTextClass:
+      "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#FF9F0D] bg-white px-6 py-2 rounded-lg text-2xl font-bold",
+    subTextClass:
+      "absolute bottom-20 text-white bg-[#FF9F0D] px-4 py-2 rounded-lg text-lg font-bold",
+  },
+  { src: "rs6.png" },
+  { src: "rs7.png" },
+  { src: "rs8.png" },
+]; */}
 
-  {/* First h1: Centered on the image */}
-  <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#FF9F0D] bg-white px-6 py-2 rounded-lg text-2xl font-bold">
-    Save 30%
-  </h1>
+<div className="flex flex-wrap justify-center items-center w-full">
+  {productData3.map((item: any, index: number) => (
+    <div key={index} className="w-1/2 md:w-1/4">
+      <div className="relative w-full max-w-4xl mb-4">
+        <a href={`http://localhost:3000/shopdetail/${item.slug}`}>
+          {/* Image */}
+          <img
+            className="object-cover object-center rounded-lg "
+            alt="Content Image"
+            src={item.image}
+          />
 
-  {/* Second h1: Positioned on the top-left */}
-  <h1 className="absolute bottom-20 text-white bg-[#FF9F0D] px-4 py-2 rounded-lg text-lg font-bold">
-    Fast Food Dish
-  </h1>
+          {/* Render mainText if available */}
+          {item.mainText && (
+            <h1 className={item.mainTextClass}>{item.mainText}</h1>
+          )}
+
+          {/* Render subText if available */}
+          {item.subText && (
+            <h1 className={item.subTextClass}>{item.subText}</h1>
+          )}
+        </a>
+      </div>
+    </div>
+  ))}
 </div>
-
-  </div>
-  <div className="w-1/4 max-w-sm">
-  <div className="relative w-full max-w-4xl">
 </div>
-
-    <img
-      className="object-cover object-center rounded-lg"
-      alt="Content Image"
-      src="rs6.png"
-    />
-
-  </div>
-  <div className="w-1/4 max-w-sm">
-    <img
-      className="object-cover object-center rounded-lg"
-      alt="Content Image"
-      src="rs7.png"
-    />
-  </div>
-  <div className="w-1/4 max-w-sm">
-    <img
-      className="object-cover object-center rounded-lg"
-      alt="Content Image"
-      src="rs8.png"
-    />
-  </div>
-</div>
-
 
 <div className="grid grid-cols-2"></div>
           <div>
@@ -240,80 +236,50 @@ export default function Home() {
     />
   </div>
 
-  {/* Column 2: Images with Titles, Descriptions, and Prices */}
-  <div>
-    <div className="flex items-center gap-4 mb-4">
-      <img src="rs21.png" alt="Image 21" className="w-16 h-16" />
-      
-      <div className="text-left">
-  <h3 className="text-white font-semibold text-lg">Lettuce Leaf</h3>
-  <p className="text-white text-sm">Lacus nisi, et ac dapibus velit in consequat.</p>
-  <p className="font-bold" style={{ color: '#FF9F0D' }}>12.5$</p>
+  {/* const items = [
+  { id: 21, imgSrc: "rs21.png", title: "Lettuce Leaf", description: "Lacus nisi, et ac dapibus velit in consequat.", price: "12.5$" },
+  { id: 22, imgSrc: "rs22.png", title: "Fresh Breakfast", description: "Lacus nisi, et ac dapibus velit in consequat.", price: "14.5$" },
+  { id: 23, imgSrc: "rs23.png", title: "Mild Butter", description: "Lacus nisi, et ac dapibus velit in consequat.", price: "12.5$" },
+  { id: 24, imgSrc: "rs24.png", title: "Fresh Bread", description: "Lacus nisi, et ac dapibus velit in consequat.", price: "12.5$" },
+  { id: 25, imgSrc: "rs25.png", title: "Glow Cheese", description: "Lacus nisi, et ac dapibus velit in consequat.", price: "12.5$" },
+  { id: 26, imgSrc: "rs26.png", title: "Italian Pizza", description: "Lacus nisi, et ac dapibus velit in consequat.", price: "14.5$" },
+  { id: 27, imgSrc: "rs27.png", title: "Slice Beef", description: "Lacus nisi, et ac dapibus velit in consequat.", price: "12.5$" },
+  { id: 28, imgSrc: "rs28.png", title: "Mushroom Pizza", description: "Lacus nisi, et ac dapibus velit in consequat.", price: "12.5$" },
+]; */}
+
+    <div className="">
+      {productData1.map((item:any) => (
+        <div key={item.id} className="flex items-center gap-4 mb-4">
+          <a href={`/shopdetail/${item.slug}`}>
+          <img src={item.image} alt={item.image} className="w-16 h-16" />
+          </a>
+          <div className="text-left">
+          <a href={`/shopdetail/${item.slug}`}>
+            <h3 className="text-white font-semibold text-lg">{item.title}</h3>
+            <p className="text-white text-sm">{item.description}</p>
+            <p className="font-bold" style={{ color: '#FF9F0D' }}>{item.price}</p>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+    <div className="">
+      {productData2.map((item:any) => (
+        <div key={item.id} className="flex items-center gap-4 mb-4">
+          <a href={`/shopdetail/${item.slug}`}>
+          <img src={item.image} alt={item.image} className="w-16 h-16" />
+          </a>
+          <div className="text-left">
+          <a href={`/shopdetail/${item.slug}`}>
+            <h3 className="text-white font-semibold text-lg">{item.title}</h3>
+            <p className="text-white text-sm">{item.description}</p>
+            <p className="font-bold" style={{ color: '#FF9F0D' }}>{item.price}</p>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
 </div>
-
-    </div>
-    <div className="flex items-center gap-4 mb-4">
-      <img src="rs22.png" alt="Image 22" className="w-16 h-16" />
-      <div className="text-left">
-        <h3 className="text-white font-semibold text-lg">Fresh Breakfast</h3>
-        <p className="text-white text-sm">Lacus nisi, et ac dapibus velit in consequat.</p>
-        <p className="font-bold" style={{ color: '#FF9F0D' }}>14.5$</p>
-      </div>
-    </div>
-    <div className="flex items-center gap-4 mb-4">
-      <img src="rs23.png" alt="Image 23" className="w-16 h-16" />
-      <div className="text-left">
-        <h3 className="text-white font-semibold text-lg">Mild Butter</h3>
-        <p className="text-white text-sm">Lacus nisi, et ac dapibus velit in consequat.</p>
-        <p className="font-bold" style={{ color: '#FF9F0D' }}>12.5$</p>
-      </div>
-    </div>
-    <div className="flex items-center gap-4 mb-4">
-      <img src="rs24.png" alt="Image 24" className="w-16 h-16" />
-      <div className="text-left">
-        <h3 className="text-white font-semibold text-lg">Fresh Bread</h3>
-        <p className="text-white text-sm">Lacus nisi, et ac dapibus velit in consequat.</p>
-        <p className="font-bold" style={{ color: '#FF9F0D' }}>12.5$</p>
-      </div>
-    </div>
-  </div>
-
-  {/* Column 3: Images with Titles, Descriptions, and Prices */}
-  <div>
-    <div className="flex items-center gap-4 mb-4">
-      <img src="rs25.png" alt="Image 25" className="w-16 h-16" />
-      <div className="text-left">
-        <h3 className="text-white font-semibold text-lg">Glow Cheese</h3>
-        <p className="text-white text-sm">Lacus nisi, et ac dapibus velit in consequat.</p>
-        <p className="font-bold" style={{ color: '#FF9F0D' }}>12.5$</p>
-      </div>
-    </div>
-    <div className="flex items-center gap-4 mb-4">
-      <img src="rs26.png" alt="Image 26" className="w-16 h-16" />
-      <div className="text-left">
-        <h3 className="text-white font-semibold text-lg">Italian Pizza</h3>
-        <p className="text-white text-sm">Lacus nisi, et ac dapibus velit in consequat.</p>
-        <p className="font-bold" style={{ color: '#FF9F0D' }}>14.5$</p>
-      </div>
-    </div>
-    <div className="flex items-center gap-4 mb-4">
-      <img src="rs27.png" alt="Image 27" className="w-16 h-16" />
-      <div className="text-left">
-        <h3 className="text-white font-semibold text-lg">Slice Beef</h3>
-        <p className="text-white text-sm">Lacus nisi, et ac dapibus velit in consequat.</p>
-        <p className="font-bold" style={{ color: '#FF9F0D' }}>12.5$</p>
-      </div>
-    </div>
-    <div className="flex items-center gap-4 mb-4">
-      <img src="rs28.png" alt="Image 28" className="w-16 h-16" />
-      <div className="text-left">
-        <h3 className="text-white font-semibold text-lg">Mushroom Pizza</h3>
-        <p className="text-white text-sm">Lacus nisi, et ac dapibus velit in consequat.</p>
-        <p className="font-bold" style={{ color: '#FF9F0D' }}>12.5$</p>
-      </div>
-    </div>
-
-  </div>
 </div>
 
 </div>
@@ -455,30 +421,26 @@ export default function Home() {
   <span className="text-[#FF9F0D]">La</span>test News & Blog</h1>
 </div>
 
-<div className="flex flex-wrap justify-center gap-4 items-center w-full">
-  {/* Each Image */}
-  <div className="w-1/4 max-w-sm">
-    <img
-      className="object-cover object-center rounded-lg"
-      alt="Content Image"
-      src="rs17.png"
-    />
-  </div>
-  <div className="w-1/4 max-w-sm">
-    <img
-      className="object-cover object-center rounded-lg"
-      alt="Content Image"
-      src="rs18.png"
-    />
-  </div>
-  <div className="w-1/4 max-w-sm">
-    <img
-      className="object-cover object-center rounded-lg"
-      alt="Content Image"
-      src="rs19.png"
-    />
-  </div>
-  </div>
+{/* const imageData = [
+  { src: "rs17.png", alt: "Content Image 1" },
+  { src: "rs18.png", alt: "Content Image 2" },
+  { src: "rs19.png", alt: "Content Image 3" },
+]; */}
+
+
+    <div className="flex flex-wrap justify-center gap-4 items-center w-full">
+      {productData4.map((item:any, index:any) => (
+        <div key={index} className="w-1/4 max-w-sm">
+          <a href={`/shopdetail/${item.slug}`}>
+          <img
+            className="object-cover object-center rounded-lg"
+            alt={item.image}
+            src={item.image}
+          />
+          </a>
+        </div>
+      ))}
+    </div>
 
 </section>          
       </div>

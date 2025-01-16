@@ -1,4 +1,9 @@
-export default function SignUp() {
+import { GetFilterByMenuData } from "@/sanity/sanaity.query";
+import { GetRecantPostData } from "@/sanity/sanaity.query";
+
+export default async function SignUp() {
+  const product1= await GetFilterByMenuData();
+  const product2 = await GetRecantPostData();
   return (
     <div>
       {/* Image Section */}
@@ -18,83 +23,83 @@ export default function SignUp() {
       <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-6 mt-6">
        {/* Blog Content (Left Sidebar) */}
 <div>
-  {[
-    {
-      id: 1,
-      title: "10 Reasons To Do A Digital Detox Challenge",
-      description:
-        "Taking a digital detox helps improve mental health and reduces stress caused by constant notifications and screen time. Challenge yourself to reconnect with the real world.",
-      date: "Feb 14, 2022",
-      author: "Admin",
-      image: "blg1.png",
-    },
-    {
-      id: 2,
-      title: "Traditional Soft Pretzels with Sweet Beer Cheese",
-      description:
-        "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.",
-      date: "Mar 05, 2022",
-      author: "Admin",
-      image: "blg2.png",
-    },
-    {
-      id: 3,
-      title: "The Ultimate Hangover Burger: Egg in a Hole Burger",
-      description:
-        "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.",
-      date: "Apr 21, 2022",
-      author: "Admin",
-      image: "blg3.png",
-    },
-    {
-      id: 4,
-      title: "My Favorite Easy Black Pizza Toast Recipe",
-      description:
-        "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.",
-      date: "May 12, 2022",
-      author: "Admin",
-      image: "blg4.png",
-    },
-  ].map((blog) => (
-    <div key={blog.id} className="bg-white shadow-sm rounded-lg p-6 mb-6">
-      <img
-        src={blog.image}
-        alt={`Blog ${blog.id}`}
-        className="w-full h-auto rounded-md bg-[#F4F4FC]"
-      />
-      <div className="space-y-2 mt-4">
-        <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-          <span className="px-4 py-2 text-black rounded-md">
-            {blog.date} /
-          </span>
-          <span className="px-4 py-2 text-black rounded-md">
-            3/ {blog.author}
-          </span>
-        </div>
-        <h3 className="text-lg text-black font-semibold">{blog.title}</h3>
-        <p className="text-gray-400">{blog.description}</p>
+{[
+  {
+    id: 1,
+    title: "10 Reasons To Do A Digital Detox Challenge",
+    description:
+      "Taking a digital detox helps improve mental health and reduces stress caused by constant notifications and screen time. Challenge yourself to reconnect with the real world.",
+    date: "Feb 14, 2022",
+    author: "Admin",
+    image: "blg1.png",
+  },
+  {
+    id: 2,
+    title: "Traditional Soft Pretzels with Sweet Beer Cheese",
+    description:
+      "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.",
+    date: "Mar 05, 2022",
+    author: "Admin",
+    image: "blg2.png",
+  },
+  {
+    id: 3,
+    title: "The Ultimate Hangover Burger: Egg in a Hole Burger",
+    description:
+      "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.",
+    date: "Apr 21, 2022",
+    author: "Admin",
+    image: "blg3.png",
+  },
+  {
+    id: 4,
+    title: "My Favorite Easy Black Pizza Toast Recipe",
+    description:
+      "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.",
+    date: "May 12, 2022",
+    author: "Admin",
+    image: "blg4.png",
+  },
+].map((blog) => (
+  <div key={blog.id} className="bg-white shadow-sm rounded-lg p-6 mb-6">
+    <img
+      src={blog.image}
+      alt={`Blog ${blog.id}`}
+      className="w-full h-auto rounded-md bg-[#F4F4FC]"
+    />
+    <div className="space-y-2 mt-4">
+      <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+        <span className="px-4 py-2 text-black rounded-md">
+          {blog.date} /
+        </span>
+        <span className="px-4 py-2 text-black rounded-md">
+          3/ {blog.author}
+        </span>
       </div>
-      {/* Input and Search Button */}
-      <div className="flex items-center">
-        <button
-          type="button"
-          className="px-6 py-2 text-sm text-[#FF9F0D] bg-white border-2 border-[#FF9F0D] hover:bg-[#FF9F0D] hover:text-white transition-colors duration-300 rounded-md"
-        >
-          Read More
-        </button>
-      </div>
+      <h3 className="text-lg text-black font-semibold">{blog.title}</h3>
+      <p className="text-gray-400">{blog.description}</p>
     </div>
-  ))}
-
-    <div >
-        <img 
-        src="blg5.png" 
-        alt="Centered Image"
-        className="center-container"
-        />
+    {/* Input and Search Button */}
+    <div className="flex items-center">
+      <button
+        type="button"
+        className="px-6 py-2 text-sm text-[#FF9F0D] bg-white border-2 border-[#FF9F0D] hover:bg-[#FF9F0D] hover:text-white transition-colors duration-300 rounded-md"
+      >
+        Read More
+      </button>
     </div>
+  </div>
+))}
 
+<div className="flex justify-center mt-6">
+  <img
+    src="blg5.png"
+    alt="Centered Image"
+    className="w-auto h-auto"
+  />
 </div>
+</div>
+
 
  {/* Right Sidebar */}
         <div className="flex flex-col space-y-4">
@@ -232,72 +237,83 @@ export default function SignUp() {
   </section>
         <div className="bg-gray-100 rounded-md p-4">
           <h1 className="text-[20px] font-semibold">Recant Post</h1>
-              {/* Product List */}
-              {[{
-                date: "June 22, 2020",
-                name: "Lorem ipsum dolor sit cingelit, sed do.",
-                image: "bd4.png"
-              }, {
-                date: "June 22, 2020",
-                name: "Lorem ipsum dolor sit cingelit, sed do.",
-                image: "bd5.png"
-              }, {
-                date: "June 22, 2020",
-                name: "Lorem ipsum dolor sit cingelit, sed do.",
-                image: "bd6.png"
-              }, {
-                date: "June 22, 2020",
-                name: "Lorem ipsum dolor sit cingelit, sed do.",
-                image: "bd7.png"
-              }].map((product, index) => (
-                <div key={index} className="flex items-center gap-4">
-                  <img src={product.image} alt={product.name} className="bg-gray-100 h-20 w-auto" />
-                  <h4 className="text-sm text-black font-semibol font-Helvetica">
-                    {product.date} <br /><br /> {product.name}
-                  </h4>
-                </div>
-              ))}
+              {/* const recentPosts = [
+  {
+    date: "June 22, 2020",
+    name: "Lorem ipsum dolor sit cingelit, sed do.",
+    image: "bd4.png",
+  },
+  {
+    date: "June 22, 2020",
+    name: "Lorem ipsum dolor sit cingelit, sed do.",
+    image: "bd5.png",
+  },
+  {
+    date: "June 22, 2020",
+    name: "Lorem ipsum dolor sit cingelit, sed do.",
+    image: "bd6.png",
+  },
+  {
+    date: "June 22, 2020",
+    name: "Lorem ipsum dolor sit cingelit, sed do.",
+    image: "bd7.png",
+  },
+]; */}
+
+    <div className="bg-gray-100 rounded-md p-4">
+      <h1 className="text-[20px] font-semibold">Recent Post</h1>
+      {/* Product List */}
+      {product2.map((product:any, index:any) => (
+        <div key={index} className="flex items-center gap-4 mb-4">
+           <a href={`http://localhost:3000/shopdetail/${product.slug}`}>
+          <img
+            src={product.image}
+            alt={product.name}
+            className="bg-gray-100 h-20 w-auto rounded-md"
+          />
+          <h4 className="text-sm text-black font-semibold">
+            {product.date} <br />
+            <br /> {product.name}
+          </h4>
+          </a>
+        </div>
+      ))}
+    </div>
+
+{/* const products = [
+  { price: "26", name: "Chicken Fry", image: "bd8.png" },
+  { price: "46", name: "Burger Food", image: "bd9.png" },
+  { price: "16", name: "Pizza", image: "bd10.png" },
+  { price: "36", name: "Fresh fruits", image: "bd11.png" },
+  { price: "16", name: "Vegetables", image: "bd12.png" }
+]; */}
+
 
 <div className="bg-gray-100 rounded-md p-2 space-y-2">
-          <h1 className="text-[20px] font-semibold">Filter By Menu</h1>
-              {/* Product List */}
-              {[{
-                price: "26",
-                name: "Chicken Fry",
-                image: "bd8.png"
-              }, {
-                price: "46",
-                name: "Burger Food",
-                image: "bd9.png"
-              }, {
-                price: "16",
-                name: "Pizza",
-                image: "bd10.png"
-              }, {
-                price: "36",
-                name: "Fresh fruits",
-                image: "bd11.png"
-              }, {
-                price: "16",
-                name: "Vegetables",
-                image: "bd12.png"
-              }].map((product, index) => (
-                <div key={index} className="flex justify-between items-center">
-                    {/* Left Side: Image and Product Name */}
-                    <div className="flex items-center">
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="bg-gray-100 h-20 w-auto mr-4" /* Added margin-right for spacing */
-                      />
-                      <p className="text-gray-600 text-sm">{product.name}</p>
-                    </div>
+      <h1 className="text-[20px] font-semibold">Filter By Menu</h1>
+      {product1.map((product:any, index:any) => (
+        <div key={index} className="flex justify-between items-center">
+          {/* Left Side: Image and Product Name */}
+          <div className="flex items-center">
+          <a href={`http://localhost:3000/shopdetail/${product.slug}`}>
+            <img
+              src={product.image}
+              alt={product.name}
+              className="bg-gray-100 h-20 w-auto mr-4" /* Added margin-right for spacing */
+            />
+             </a>
+            <p className="text-gray-600 text-sm">{product.title}</p>
+           
+          </div>
 
-                    {/* Right Side: Product Price */}
-                    <p className="text-gray-600 text-sm">{product.price}</p>
-                  </div>
-                ))}
-        </div>
+          {/* Right Side: Product Price */}
+          <a href={`http://localhost:3000/shopdetail/${product.slug}`}>
+          <p className="text-gray-600 text-sm">{product.price}</p>
+          </a>
+          </div>
+      ))}
+    </div>
+
         <h1 className="text-[20px] font-semibold">
         Popular Tabs</h1>
        

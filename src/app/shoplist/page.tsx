@@ -86,17 +86,21 @@ export default async function ShopList() {
             >
               {/* Image Section */}
               <div className="bg-gray-100 flex justify-center items-center w-[312px] h-[320px] rounded-md">
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  className="max-h-full max-w-full object-contain"
-                />
+               <a href={`/shopdetail/${product.slug}`}>
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </a>
               </div>
               {/* Title and Price Section */}
               <div className="mt-2">
+              <a href={`/shopdetail/${product.slug}`}>
                 <h3 className="text-base font-medium text-[#151875]">
                   {product.title}
                 </h3>
+              </a>
                 <p className="text-lg font-bold text-[#FF9F0D]">
                   {product.price}
                 </p>

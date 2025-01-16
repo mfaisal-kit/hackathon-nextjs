@@ -49,7 +49,7 @@ export default function Header(){
       </svg>
     </a>
         <ul className="absolute hidden group-hover:flex flex-col bg-white shadow-lg rounded-md  min-w-[150px] z-10">
-          <li><a href="/404page1" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">404page</a></li>
+          <li><a href="/404page" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">404page</a></li>
           <li><a href="/aboutus" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">aboutus</a></li>
           <li><a href="/blogdetail" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">blogdetail</a></li>
           <li><a href="/blogpage" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">blogpage</a></li>
@@ -82,7 +82,7 @@ export default function Header(){
       </svg>
     </a>
     <ul className="absolute hidden group-hover:flex flex-col bg-white shadow-lg rounded-md  min-w-[150px] z-10">
-          <li><a href="/404page1" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">404page</a></li>
+          <li><a href="/404page" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">404page</a></li>
           <li><a href="/aboutus" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">aboutus</a></li>
           <li><a href="/blogdetail" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">blogdetail</a></li>
           <li><a href="/blogpage" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">blogpage</a></li>

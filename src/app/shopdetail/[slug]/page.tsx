@@ -1,4 +1,8 @@
-export default function ShopDetail() {
+import { GetProductDetails } from "@/sanity/sanaity.query";
+
+export default async function ShopDetail({params}:any) {
+  const productData = await GetProductDetails(params.slug);
+  console.log(productData);
   return (
     <>
      <div className="font-sans">
@@ -10,7 +14,7 @@ export default function ShopDetail() {
         {["sps2.png", "sps3.png", "sps4.png", "sps5.png"].map((img, index) => (
           <img
             key={index}
-            src={`img/products/${img}`}
+            src= {'http://localhost:3000/'+productData[0].image}
             alt={`Product Thumbnail ${index + 1}`}
             className="w-[70px] h-[70px] cursor-pointer rounded-md outline outline-2 outline-gray-200 hover:outline-blue-500 mb-2"
           />
@@ -22,7 +26,7 @@ export default function ShopDetail() {
         {/* Main Product Image */}
         <div className="w-full lg:w-[375px] h-full p-4 flex-shrink-0">
           <img
-            src="img/products/sps1.png"
+            src= {'http://localhost:3000/'+productData[0].image}
             alt="Main Product"
             className="w-full object-cover rounded-md"
           />
@@ -39,16 +43,16 @@ export default function ShopDetail() {
 
           {/* Product Name */}
           <h1 className="text-[48px] font-bold text-left">
-            Yummy Chicken Chup
+            {productData[0].title}
           </h1>
 
           {/* Product Description */}
           <p className="text-left font-normal text-gray-700">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.
+          {productData[0].description}
           </p>
 
           {/* Price */}
-          <p className="text-[40px] font-bold text-left text-[#151875]">$54.00</p>
+          <p className="text-[40px] font-bold text-left text-[#151875]"> {productData[0].price}</p>
 
           {/* Rating and Reviews */}
           <div className="flex items-center space-x-2">
@@ -179,15 +183,17 @@ export default function ShopDetail() {
   <div className="p-4 lg:max-w-7xl max-w-lg mx-auto">
   <h3 className="text-2xl font-bold text-left mb-6 text-black">Similar Products</h3>
   <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-    {[
-      { name: "Fresh Lime", price: "$38.00", image: "sp1.png" },
-      { name: "Chocolate Muffin", price: "$28.00", image: "sp2.png" },
-      { name: "Burger", price: "$21.00", image: "sp3.png" },
-      { name: "Fresh Lime", price: "$38.00", image: "sp4.png" },
-    ].map((product, index) => (
+    {
+    // [
+    //   { name: "Fresh Lime", price: "$38.00", image: "sp1.png" },
+    //   { name: "Chocolate Muffin", price: "$28.00", image: "sp2.png" },
+    //   { name: "Burger", price: "$21.00", image: "sp3.png" },
+    //   { name: "Fresh Lime", price: "$38.00", image: "sp4.png" },
+    // ];
+    productData.map((product:any, index:any) => (
       <div key={index} className="bg-white p-4 rounded-md shadow-md">
         <img
-          src={`img/products/${product.image}`}
+          src={`${product.image}`}
           alt={product.name}
           className="w-full h-40 object-cover rounded"
         />

@@ -15,57 +15,57 @@ export async function GetUserData() {
     )    
 }
 
-//Featured Products
-export async function GetFeaturedProductsData() {
+//From Our Menu Data
+export async function GetFromOurMenuData1() {
     return sanityClient.fetch(
         groq`*[_type=="products"]  | order(_createdAt asc)
                 {name, title, price, description,image,slug}
-                [0..3]`
+                [1..4]`
     )    
 }
 
-//Leatest Products
-export async function GetLeatestProductsData() {
+//From Our Menu Data
+export async function GetFromOurMenuData2() {
     return sanityClient.fetch(
         groq`*[_type=="products"]  | order(_createdAt asc)
                 {name, title, price, description,image,slug}
-                [4..9]`
+                [5..8]`
     )    
 }
 
-//Trending Products
-export async function GetTrendingProductsData() {
+//Filter By Menu Data
+export async function GetFilterByMenuData() {
     return sanityClient.fetch(
         groq`*[_type=="products"]  | order(_createdAt asc)
                 {name, title, price, description,image,slug}
-                [10..13]`
+                [21..25]`
     )    
 }
 
-//Top Categories
-export async function GetTopCategoriesData() {
+//Similar Products
+export async function GetSimilarProductsData() {
     return sanityClient.fetch(
         groq`*[_type=="products"]  | order(_createdAt asc)
                 {name, title, price, description,image,slug}
-                [14..17]`
+                [27..30]`
     )    
 }
 
-//Shop Grid
-export async function GetShopGridData() {
+//Recant Post
+export async function GetRecantPostData() {
     return sanityClient.fetch(
         groq`*[_type=="products"]  | order(_createdAt asc)
                 {name, title, price, description,image,slug}
-                [18..29]`
+                [31..34]`
     )    
 }
 
-//Shop Left Sidebar
-export async function GetShopLeftData() {
+//Choose Food Item
+export async function GetChooseFoodItemData() {
     return sanityClient.fetch(
         groq`*[_type=="products"]  | order(_createdAt asc)
                 {name, title, price, description,image,slug}
-                [30..41]`
+                [35..38]`
     )    
 }
 
@@ -74,7 +74,17 @@ export async function GetShopListData() {
     return sanityClient.fetch(
         groq`*[_type=="products"]  | order(_createdAt asc)
                 {name, title, price, description,image,slug}
-                `
+                [9..20]`
+    )    
+}
+
+
+//Blog Post
+export async function GetBlogPostData() {
+    return sanityClient.fetch(
+        groq`*[_type=="products"]  | order(_createdAt asc)
+                {name, title, price, description,image,slug}
+                [39..41]`
     )    
 }
 
