@@ -9,7 +9,7 @@ export default async function Home() {
   const productData2 = await GetFromOurMenuData2();
   const productData3 = await GetChooseFoodItemData();
   const productData4 = await GetBlogPostData();
-
+  console.log(productData4);
   return (
     <>
      

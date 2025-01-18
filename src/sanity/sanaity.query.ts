@@ -84,7 +84,7 @@ export async function GetBlogPostData() {
     return sanityClient.fetch(
         groq`*[_type=="products"]  | order(_createdAt asc)
                 {name, title, price, description,image,slug}
-                [39..41]`
+                [39..42]`
     )    
 }
 
