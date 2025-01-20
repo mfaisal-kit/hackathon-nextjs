@@ -1,3 +1,4 @@
+
 import { GetProductDetails } from "@/sanity/sanaity.query";
 
 export default async function ShopDetail({params}:any) {
@@ -14,7 +15,7 @@ export default async function ShopDetail({params}:any) {
         {["sps2.png", "sps3.png", "sps4.png", "sps5.png"].map((img, index) => (
           <img
             key={index}
-            src= {'http://localhost:3000/'+productData[0].image}
+            src={process.env.BASE_URL+`/${productData[0].image}`}
             alt={`Product Thumbnail ${index + 1}`}
             className="w-[70px] h-[70px] cursor-pointer rounded-md outline outline-2 outline-gray-200 hover:outline-blue-500 mb-2"
           />
@@ -26,7 +27,7 @@ export default async function ShopDetail({params}:any) {
         {/* Main Product Image */}
         <div className="w-full lg:w-[375px] h-full p-4 flex-shrink-0">
           <img
-            src= {'http://localhost:3000/'+productData[0].image}
+            src= {process.env.BASE_URL+`/${productData[0].image}`}
             alt="Main Product"
             className="w-full object-cover rounded-md"
           />
@@ -193,7 +194,7 @@ export default async function ShopDetail({params}:any) {
     productData.map((product:any, index:any) => (
       <div key={index} className="bg-white p-4 rounded-md shadow-md">
         <img
-          src={`${product.image}`}
+          src={process.env.BASE_URL+`/${productData[0].image}`}
           alt={product.name}
           className="w-full h-40 object-cover rounded"
         />

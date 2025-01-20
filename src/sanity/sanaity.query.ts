@@ -84,7 +84,7 @@ export async function GetBlogPostData() {
     return sanityClient.fetch(
         groq`*[_type=="products"]  | order(_createdAt asc)
                 {name, title, price, description,image,slug}
-                [39..42]`
+                [39..41]`
     )    
 }
 
@@ -94,6 +94,24 @@ export async function GetProductDetails(param:any) {
     return sanityClient.fetch(
         groq`*[_type=="products" && slug=='${param}']  | order(_createdAt asc)
                 {name, title, price, description,image,slug}`
+    )    
+}
+
+//Our Chefs
+export async function GetOurChefsData() {
+    return sanityClient.fetch(
+        groq`*[_type=="products"]  | order(_createdAt asc)
+                {name, title, price, description,image,slug}
+                [42..53]`
+    )    
+}
+
+//Meet Our Chefs
+export async function GetMeetOurChefsData() {
+    return sanityClient.fetch(
+        groq`*[_type=="products"]  | order(_createdAt asc)
+                {name, title, price, description,image,slug}
+                [54..57]`
     )    
 }
 

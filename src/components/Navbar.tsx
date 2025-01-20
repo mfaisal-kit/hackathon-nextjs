@@ -62,7 +62,7 @@ export default function Navbar() {
           <li><a href="/aboutus" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">aboutus</a></li>
           <li><a href="/blogdetail" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">blogdetail</a></li>
           <li><a href="/blogpage" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">blogpage</a></li>
-          <li><a href="/faqpage" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">FAQpage</a></li>
+          <li><a href="/faqpage" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">faqpage</a></li>
           <li><a href="/menu" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">menu</a></li>
           <li><a href="/ourchefs" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">ourchefs</a></li>
           <li><a href="/restaurant" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">restaurant</a></li>
@@ -91,7 +91,7 @@ export default function Navbar() {
       </svg>
     </a>
     <ul className="absolute hidden group-hover:flex flex-col bg-white shadow-lg rounded-md  min-w-[150px] z-10">
-          <li><a href="/404page1" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">404page</a></li>
+          <li><a href="/404page" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">404page</a></li>
           <li><a href="/aboutus" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">aboutus</a></li>
           <li><a href="/blogdetail" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">blogdetail</a></li>
           <li><a href="/blogpage" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">blogpage</a></li>
@@ -100,6 +100,7 @@ export default function Navbar() {
           <li><a href="/ourchefs" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">ourchefs</a></li>
           <li><a href="/restaurant" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">restaurant</a></li>
           <li><a href="/shoplist" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">shoplist</a></li>
+          <li><a href="/shopdetail" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">shopdetail</a></li>
           <li><a href="/shoppingcart" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">shoppingcart</a></li>
           <li><a href="/signin" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">signin</a></li>
           <li><a href="/signup" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100">signup</a></li>

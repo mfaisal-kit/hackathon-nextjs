@@ -3,12 +3,14 @@ import { GetFromOurMenuData1 } from '@/sanity/sanaity.query';
 import { GetFromOurMenuData2 } from '@/sanity/sanaity.query';
 import { GetChooseFoodItemData } from '@/sanity/sanaity.query';
 import { GetBlogPostData } from '@/sanity/sanaity.query';
+import { GetMeetOurChefsData } from '@/sanity/sanaity.query';
 
 export default async function Home() {
   const productData1 = await GetFromOurMenuData1();
   const productData2 = await GetFromOurMenuData2();
   const productData3 = await GetChooseFoodItemData();
   const productData4 = await GetBlogPostData();
+  const productData5 = await GetMeetOurChefsData();
   console.log(productData4);
   return (
     <>
@@ -292,35 +294,18 @@ export default async function Home() {
 </div>
 
 <div className="flex flex-wrap justify-center gap-4 items-center w-full">
-  {/* Each Image */}
-  <div className="w-1/4 max-w-sm">
-    <img
-      className="object-cover object-center rounded-lg"
-      alt="Content Image"
-      src="rs11.png"
-    />
-  </div>
-  <div className="w-1/4 max-w-sm">
-    <img
-      className="object-cover object-center rounded-lg"
-      alt="Content Image"
-      src="rs12.png"
-    />
-  </div>
-  <div className="w-1/4 max-w-sm">
-    <img
-      className="object-cover object-center rounded-lg"
-      alt="Content Image"
-      src="rs13.png"
-    />
-  </div>
-  <div className="w-1/4 max-w-sm">
-    <img
-      className="object-cover object-center rounded-lg"
-      alt="Content Image"
-      src="rs14.png"
-    />
-  </div>
+  {/* Dynamic Image Rendering */}
+  {productData5.map((image: any, index: number) => (
+    <div key={index} className="w-1/4 max-w-sm">
+      <a href={`/shopdetail/${image.slug}`}>
+      <img
+        className="object-cover object-center rounded-lg"
+        alt={`Chef ${index + 1}`}
+        src={image.image}
+      />
+      </a>
+    </div>
+  ))}
 </div>
 
 <div className="flex justify-center items-center mt-4 h-full">
