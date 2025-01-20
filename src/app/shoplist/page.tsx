@@ -88,7 +88,7 @@ export default async function ShopList() {
               <div className="bg-gray-100 flex justify-center items-center w-[312px] h-[320px] rounded-md">
                <a href={`/shopdetail/${product.slug}`}>
                   <img
-                    src={product.image}
+                    src={process.env.BASE_URL+`/${product.image}`}
                     alt={product.title}
                     className="max-h-full max-w-full object-contain"
                   />

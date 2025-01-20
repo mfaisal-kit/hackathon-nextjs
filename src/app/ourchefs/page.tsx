@@ -36,7 +36,7 @@ export default async function SignUp() {
       <div key={index} className="text-center">
          <a href={`shopdetail/${person.slug}`}>
         <img
-          src={person.image}
+          src={process.env.BASE_URL+`/${productData[0].image}`}
           alt={person.name}
           className="w-full h-auto object-cover rounded-lg"
         />

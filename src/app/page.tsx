@@ -164,7 +164,7 @@ export default async function Home() {
           <img
             className="object-cover object-center rounded-lg "
             alt="Content Image"
-            src={item.image}
+            src={process.env.BASE_URL+`/${item.image}`}
           />
 
           {/* Render mainText if available */}
@@ -301,7 +301,7 @@ export default async function Home() {
       <img
         className="object-cover object-center rounded-lg"
         alt={`Chef ${index + 1}`}
-        src={image.image}
+        src={process.env.BASE_URL+`/${image.image}`}
       />
       </a>
     </div>
@@ -420,7 +420,7 @@ export default async function Home() {
           <img
             className="object-cover object-center rounded-lg"
             alt={item.image}
-            src={item.image}
+            src={process.env.BASE_URL+`/${item.image}`}
           />
           </a>
         </div>
