@@ -159,7 +159,7 @@ export default async function Home() {
   {productData3.map((item: any, index: number) => (
     <div key={index} className="w-1/2 md:w-1/4">
       <div className="relative w-full max-w-4xl mb-4">
-        <a href={`http://localhost:3000/shopdetail/${item.slug}`}>
+        <a href={process.env.BASE_URL+`/shopdetail/${item.slug}`}>
           {/* Image */}
           <img
             className="object-cover object-center rounded-lg "
@@ -252,11 +252,11 @@ export default async function Home() {
     <div className="">
       {productData1.map((item:any) => (
         <div key={item.id} className="flex items-center gap-4 mb-4">
-          <a href={`/shopdetail/${item.slug}`}>
+          <a href={process.env.BASE_URL+`/shopdetail/${item.slug}`}>
           <img src={item.image} alt={item.image} className="w-16 h-16" />
           </a>
           <div className="text-left">
-          <a href={`/shopdetail/${item.slug}`}>
+          <a href={process.env.BASE_URL+`/shopdetail/${item.slug}`}>
             <h3 className="text-white font-semibold text-lg">{item.title}</h3>
             <p className="text-white text-sm">{item.description}</p>
             <p className="font-bold" style={{ color: '#FF9F0D' }}>{item.price}</p>
@@ -268,11 +268,11 @@ export default async function Home() {
     <div className="">
       {productData2.map((item:any) => (
         <div key={item.id} className="flex items-center gap-4 mb-4">
-          <a href={`/shopdetail/${item.slug}`}>
+          <a href={process.env.BASE_URL+`/shopdetail/${item.slug}`}>
           <img src={item.image} alt={item.image} className="w-16 h-16" />
           </a>
           <div className="text-left">
-          <a href={`/shopdetail/${item.slug}`}>
+          <a href={process.env.BASE_URL+`/shopdetail/${item.slug}`}>
             <h3 className="text-white font-semibold text-lg">{item.title}</h3>
             <p className="text-white text-sm">{item.description}</p>
             <p className="font-bold" style={{ color: '#FF9F0D' }}>{item.price}</p>
@@ -297,7 +297,7 @@ export default async function Home() {
   {/* Dynamic Image Rendering */}
   {productData5.map((image: any, index: number) => (
     <div key={index} className="w-1/4 max-w-sm">
-      <a href={`/shopdetail/${image.slug}`}>
+      <a href={process.env.BASE_URL+`/shopdetail/${image.slug}`}>
       <img
         className="object-cover object-center rounded-lg"
         alt={`Chef ${index + 1}`}
@@ -416,7 +416,7 @@ export default async function Home() {
     <div className="flex flex-wrap justify-center gap-4 items-center w-full">
       {productData4.map((item:any, index:any) => (
         <div key={index} className="w-1/4 max-w-sm">
-          <a href={`/shopdetail/${item.slug}`}>
+          <a href={process.env.BASE_URL+`/shopdetail/${item.slug}`}>
           <img
             className="object-cover object-center rounded-lg"
             alt={item.image}

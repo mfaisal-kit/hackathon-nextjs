@@ -305,7 +305,7 @@ export default async function SignUp() {
       {/* Product List */}
       {product2.map((product:any, index:any) => (
         <div key={index} className="flex items-center gap-4 mb-4">
-           <a href={`http://localhost:3000/shopdetail/${product.slug}`}>
+           <a href={process.env.BASE_URL+`/shopdetail/${product.slug}`}>
           <img
             src={product.image}
             alt={product.name}
@@ -335,7 +335,7 @@ export default async function SignUp() {
         <div key={index} className="flex justify-between items-center">
           {/* Left Side: Image and Product Name */}
           <div className="flex items-center">
-          <a href={`http://localhost:3000/shopdetail/${product.slug}`}>
+          <a href={process.env.BASE_URL+`/shopdetail/${product.slug}`}>
             <img
               src={product.image}
               alt={product.name}
@@ -347,7 +347,7 @@ export default async function SignUp() {
           </div>
 
           {/* Right Side: Product Price */}
-          <a href={`http://localhost:3000/shopdetail/${product.slug}`}>
+          <a href={process.env.BASE_URL+`/shopdetail/${product.slug}`}>
           <p className="text-gray-600 text-sm">{product.price}</p>
           </a>
           </div>
