@@ -17,35 +17,36 @@ export default async function SignUp() {
           </div>
         </div>
         {/* const people = [
-  { name: "Tahmina Rumi", occupation: "Chef", src: "ch1.png" },
-  { name: "Jorina Begum", occupation: "Chef", src: "ch2.png" },
-  { name: "M.Mohammad", occupation: "Chef", src: "ch3.png" },
-  { name: "Munna Kathy", occupation: "Chef", src: "ch4.png" },
-  { name: "Tahmina Rumi", occupation: "Chef", src: "ch5.png" },
-  { name: "Bisnu devgon", occupation: "Chef", src: "ch6.png" },
-  { name: "Motin Molladsf", occupation: "Chef", src: "ch7.png" },
-  { name: "William Rumi", occupation: "Chef", src: "ch8.png" },
-  { name: "Kets william roy", occupation: "Chef", src: "ch9.png" },
-  { name: "Mahmud kholil", occupation: "Chef", src: "ch10.png" },
-  { name: "Ataur Rahman", occupation: "Chef", src: "ch11.png" },
-  { name: "Monalisa holly", occupation: "Chef", src: "ch12.png" },
+  { name: "Tahmina Rumi", description: "Chef", src: "ch1.png" },
+  { name: "Jorina Begum", description: "Chef", src: "ch2.png" },
+  { name: "M.Mohammad", description: "Chef", src: "ch3.png" },
+  { name: "Munna Kathy", description: "Chef", src: "ch4.png" },
+  { name: "Tahmina Rumi", description: "Chef", src: "ch5.png" },
+  { name: "Bisnu devgon", description: "Chef", src: "ch6.png" },
+  { name: "Motin Molladsf", description: "Chef", src: "ch7.png" },
+  { name: "William Rumi", description: "Chef", src: "ch8.png" },
+  { name: "Kets william roy", description: "Chef", src: "ch9.png" },
+  { name: "Mahmud kholil", description: "Chef", src: "ch10.png" },
+  { name: "Ataur Rahman", description: "Chef", src: "ch11.png" },
+  { name: "Monalisa holly", description: "Chef", src: "ch12.png" },
 ]; */}
 
-  <div className="w-[1320px] pt-[60px] mx-auto grid grid-cols-4 gap-8">
-    {productData.map((person:any, index:any) => (
-      <div key={index} className="text-center">
-         <a href={`shopdetail/${person.slug}`}>
+<div className="w-[1320px] pt-[60px] mx-auto grid grid-cols-4 gap-8">
+  {productData.map((item: any, index: number) => (
+    <div key={index} className="text-center">
+      <a href={`shopdetail/${item.slug}`}>
         <img
-          src={process.env.BASE_URL+`/${productData[0].image}`}
-          alt={person.name}
+          src={`${process.env.BASE_URL}/${item.image}`}
+          alt={item.name}
           className="w-full h-auto object-cover rounded-lg"
         />
-        <h2 className="mt-2 text-lg font-medium text-gray-800">{person.name}</h2>
-        <p className="text-sm text-gray-500">{person.occupation}</p>
-        </a>
-      </div>
-    ))}
-  </div>
+        <h2 className="mt-2 text-lg font-medium text-gray-800">{item.name}</h2>
+        <p className="text-sm text-gray-500">{item.description}</p>
+      </a>
+    </div>
+  ))}
+</div>
+
 );
 
 

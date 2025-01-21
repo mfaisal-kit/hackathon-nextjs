@@ -1,0 +1,67 @@
+Test Case ID,Test Case Description,Test Steps,Expected Result,Actual Result,Status,Severity Level,Assigned To,Remarks
+HP001,Verify that the home page loads successfully,"1. Open the browser
+2. Navigate to the home page URL
+3. Check if the page loads without errors",Home page loads successfully without errors,Home page loaded without errors,Passed,Low,,
+HP002,Verify the responsiveness of the home page,"1. Resize the browser window
+2. Check the layout at various screen sizes",Home page adjusts layout correctly for all screen sizes,Layout adjusted correctly,Passed,Medium,,
+HP003,Verify the functionality of the home page search bar,"1. Enter a search query
+2. Press the search button
+3. Observe the search results",Search results are displayed matching the query,Results displayed correctly,Passed,High,,
+AU001,Verify that the About Us page loads successfully,"1. Navigate to the About Us page from the menu
+2. Check if the page content loads without errors",About Us page loads successfully,Page loaded successfully,Passed,Low,,
+AU002,Verify the content accuracy on the About Us page,"1. Read the content on the About Us page
+2. Compare it with the expected content",Content is accurate and matches the requirements,Content accurate,Passed,Medium,,
+BL001,Verify that the Blog page lists all blogs,"1. Navigate to the Blog page
+2. Check if all blog entries are displayed",Blog page displays all entries correctly,Blog entries displayed correctly,Passed,Medium,,
+BL002,Verify the pagination on the Blog page,"1. Navigate to the Blog page
+2. Click on the pagination links
+3. Observe if pagination works correctly",Pagination works as expected,Pagination working correctly,Passed,Low,,
+BLD001,Verify that the Blog Detail page loads successfully,"1. Click on a blog entry from the Blog page
+2. Observe if the detail page loads without errors",Detail page loads successfully,Detail page loaded successfully,Passed,Low,,
+BLD002,Verify the functionality of social media sharing buttons,"1. Navigate to a blog detail page
+2. Click on social media sharing buttons
+3. Verify the sharing functionality",Social media sharing works as expected,Sharing worked correctly,Passed,Medium,,
+ME001,Verify that the menu page displays all menu items,"1. Navigate to the Menu page
+2. Check if all menu items are displayed",Menu page displays all items,Menu items displayed correctly,Passed,High,,
+ME002,Verify the filtering functionality on the menu page,"1. Use the filters to sort menu items
+2. Observe the results",Filtering works as expected,Filtering worked correctly,Passed,Medium,,
+OC001,Verify that the Our Chefs page loads successfully,"1. Navigate to the Our Chefs page from the menu
+2. Check if the page content loads",Our Chefs page loads successfully,Page loaded successfully,Passed,Low,,
+OC002,Verify the accuracy of chef profiles,"1. Navigate to the Our Chefs page
+2. Check the profiles for accuracy",Chef profiles are accurate,Profiles accurate,Passed,Medium,,
+FAQ001,Verify that the FAQ page loads successfully,"1. Navigate to the FAQ page from the menu
+2. Check if the page content loads without errors",FAQ page loads successfully,Page loaded successfully,Passed,Low,,
+FAQ002,Verify the expand/collapse functionality for FAQ entries,"1. Click on an FAQ question
+2. Check if the answer expands/collapses",Expand/collapse works as expected,Expand/collapse worked correctly,Passed,Low,,
+SL001,Verify that the Shop List page displays products,"1. Navigate to the Shop List page
+2. Check if products are listed",Products are listed on the Shop List page,Products displayed correctly,Passed,High,,
+SL002,Verify the sorting functionality on the Shop List page,"1. Use sorting options (e.g., price, popularity)
+2. Observe if products are sorted correctly",Sorting works as expected,Sorting worked correctly,Passed,Medium,,
+SD001,Verify that the Shop Detail page loads successfully,"1. Click on a product from the Shop List page
+2. Check if the detail page loads",Shop Detail page loads successfully,Page loaded successfully,Passed,Low,,
+SD002,Verify the add-to-cart functionality,"1. Click on the ""Add to Cart"" button on the Shop Detail page
+2. Verify if the item is added to the cart",Item is added to the cart successfully,Item added successfully,Passed,High,,
+SC001,Verify the functionality of the shopping cart,"1. Add items to the cart
+2. Navigate to the Shopping Cart page
+3. Verify the cart contents",Shopping cart displays correct items,Cart displayed correctly,Passed,High,,
+SC002,Verify the remove item functionality in the shopping cart,"1. Remove an item from the cart
+2. Verify if the item is removed successfully",Item is removed from the cart,Item removed successfully,Passed,Medium,,
+CO001,Verify the checkout functionality,"1. Add items to the cart
+2. Navigate to the checkout page
+3. Complete the checkout process",Checkout completes successfully,Checkout completed successfully,Passed,High,,
+CO002,Verify the error handling for invalid payment details,"1. Enter invalid payment details during checkout
+2. Verify if an appropriate error message is displayed",Error message is displayed for invalid payment,Error message displayed,Passed,High,,
+SI001,Verify the sign-in functionality,"1. Navigate to the Sign-In page
+2. Enter valid credentials
+3. Verify if sign-in succeeds",Sign-in succeeds with valid credentials,Sign-in succeeded,Passed,High,,
+SI002,Verify the error message for invalid credentials,"1. Enter invalid credentials
+2. Verify if an appropriate error message is displayed",Error message is displayed for invalid credentials,Error message displayed,Passed,High,,
+SU001,Verify the sign-up functionality,"1. Navigate to the Sign-Up page
+2. Enter valid details
+3. Verify if sign-up succeeds",Sign-up succeeds with valid details,Sign-up succeeded,Passed,High,,
+SU002,Verify the error handling for invalid sign-up details,"1. Enter invalid details during sign-up
+2. Verify if an appropriate error message is displayed",Error message is displayed for invalid details,Error message displayed,Passed,High,,
+NF001,Verify that the 404 page is displayed for invalid URLs,"1. Enter an invalid URL
+2. Check if the 404 page is displayed",404 page is displayed for invalid URLs,404 page displayed correctly,Passed,Low,,
+NF002,Verify the navigation functionality from the 404 page,"1. Click on navigation links on the 404 page
+2. Check if the user is redirected correctly",Navigation works as expected,Navigation worked correctly,Passed,Low,,
